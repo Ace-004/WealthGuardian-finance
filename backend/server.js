@@ -12,7 +12,7 @@ const budgetRouter = require("./routes/budgetRouter");
 dotenv.config();
 // app setup
 const app = express(); 
-app.use(cors());
+app.use(cors(process.env.CORS_OPTIONS || {}));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
